@@ -1,0 +1,3 @@
+<div *ngIf="data" class="chart-container" [style.height]="height">
+    <div #chart echarts [theme]="theme" [initOpts]="initOptions" [options]="data" class="chart"></div>
+</div>
