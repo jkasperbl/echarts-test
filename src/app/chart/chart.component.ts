@@ -1,6 +1,5 @@
 import { Component, ElementRef, Input, NgModule, OnChanges, OnInit, SimpleChanges, ViewChild } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { takeUntil } from 'rxjs/operators';
 import { NgxEchartsModule } from 'ngx-echarts';
 import { registerTheme } from 'echarts/core';
 import { EChartsOption } from 'echarts/types/dist/echarts';
@@ -23,7 +22,7 @@ export class ChartComponent implements OnInit, OnChanges {
     @Input() data?: EChartsOption;
     @Input() rendering?: ChartRenderingOptions;
 
-    theme = 'eCommerce360';
+    theme = 'TestTheme';
 
     initOptions: ChartInitOptions = { renderer: 'canvas' };
 
@@ -31,7 +30,6 @@ export class ChartComponent implements OnInit, OnChanges {
 
     static initialized = false;
     static colorPalette = [
-        // Unbound Blue, Celebros Orange, DataBravo Purple, Unbound Green, WooRank Blue, Yellow
         '#119FF7',
         '#FF6A33',
         '#6666FF',
@@ -76,7 +74,7 @@ export class ChartComponent implements OnInit, OnChanges {
     }
 
     private registerTheme(): void {
-        registerTheme('eCommerce360', {
+        registerTheme('TestTheme', {
             color: ChartComponent.colorPalette,
             backgroundColor: 'rgba(255, 255, 255,0)',
             textStyle: { fontFamily: 'Source Sans Pro' },
